@@ -23,7 +23,7 @@ export default class SignUp extends Component {
 
             this.props.changeTokenAndUserName(user.body.email, user.body.token);
 
-            this.props.history.push('/todos');
+            this.props.history.push('/api/todos');
         }
 
     render() {
@@ -31,7 +31,7 @@ export default class SignUp extends Component {
             <div>
 
                 <form onSubmit={this.handleSubmit}>
-                    <h2>Log in</h2>
+                    <h2>Welcome! <br/> Sign up here with your email, and create a unique password.</h2>
                     <label>
                         Email:
                         <input 
@@ -49,7 +49,7 @@ export default class SignUp extends Component {
                         this.state.loading 
                         ? 'Loading...'
                         : <button>
-                            Sign up!
+                            sign up
                         </button>
                     }
                     
