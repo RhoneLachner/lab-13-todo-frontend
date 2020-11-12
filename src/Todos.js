@@ -22,7 +22,7 @@ export default class Todos extends Component {
         const response = await request.get('https://immense-taiga-40019.herokuapp.com/api/todos')
         .set('Authorization', token)
 
-        await this.setState({ plants: response.body, loading: false })
+        await this.setState({ todos: response.body, loading: false })
     }
 
     handleSubmit = async (e) => {

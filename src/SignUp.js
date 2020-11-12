@@ -21,9 +21,9 @@ export default class SignUp extends Component {
 
             this.setState({ loading:false })
 
-            this.props.changeTokenAndUserName(user.body.email, user.body.token);
+            this.props.changeTokenAndUserName(user.body.token, user.body.email);
 
-            this.props.history.push('/api/todos');
+            this.props.history.push('/todos');
         }
 
     render() {

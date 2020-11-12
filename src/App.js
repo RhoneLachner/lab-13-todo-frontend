@@ -20,12 +20,12 @@ export default class App extends Component {
     token: localStorage.getItem('TOKEN') || '',
   }
 
-  changeTokenAndUsername = (password, userName) => {
+  changeTokenAndUserName = (password, username) => {
     localStorage.setItem('TOKEN', password);
-    localStorage.setItem('USERNAME', userName);
+    localStorage.setItem('USERNAME', username);
 
     this.setState({
-      username: userName,
+      username: username,
       token: password
     })
   }
@@ -52,7 +52,7 @@ render() {
             {
             this.state.token 
             ? <div>
-              {this.state.username}
+             {this.state.username}
               <button onClick={this.logOut}>Log out</button>
             </div>
           : <>
@@ -65,7 +65,7 @@ render() {
             <Route exact path='/login' render={(routerProps) => 
                 <Login 
                   {...routerProps} 
-                  changeTokenAndUsername={this.changeTokenAndUsername} 
+                  changeTokenAndUserName={this.changeTokenAndUserName} 
               />
               } 
             />
@@ -75,7 +75,7 @@ render() {
               render={(routerProps) => 
                   <SignUp  
                     {...routerProps} 
-                    changeTokenAndUsername={this.changeTokenAndUsername} 
+                    changeTokenAndUserName={this.changeTokenAndUserName} 
                     />
                 } 
               />
