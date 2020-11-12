@@ -56,7 +56,6 @@ export default class Todos extends Component {
         await this.fetchTodos();
     }
 
-
     render() {
 
         const {
